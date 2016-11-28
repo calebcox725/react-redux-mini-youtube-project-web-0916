@@ -7,8 +7,8 @@ function mapStateToProps(state) {
 
 function Player(props) {
   return (
-    <div className="Player">
-      <iframe width="800" height="600" src={ props.mainVideo.src } />
+    <div className="Player video-container">
+      <iframe src={ props.mainVideo.src } />
     </div>
   )
 }

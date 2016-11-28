@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import { swapVideos } from '../actions/actions'
@@ -15,14 +15,14 @@ function Sidebar(props) {
   function handleClick(event) {
     const mainVideo = props.mainVideo
     const swapVideo = props.sidebarVideos[event.target.id]
-    
+
     props.swapVideos(mainVideo, swapVideo)
   }
 
   const otherVideos = props.sidebarVideos.map((video, i) => {
     return (
-      <li id={i} onClick={handleClick.bind(this)} className="list-group-item">
-        <img id={i} src={video.thumbnail} />
+      <li id={i} onClick={handleClick.bind(this)}>
+        <img id={i} src={video.thumbnail} /><br/>
         {video.title}
       </li>
     )

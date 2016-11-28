@@ -16,7 +16,7 @@ function mainVideo(state = {}, action){
   }
 }
 
-function sidebarVideos(state=[], action) {
+function sidebarVideos(state = [], action) {
   switch (action.type) {
     case "FETCH_VIDEOS":
       const videos = action.payload.data.items.slice(1)
