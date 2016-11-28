@@ -5,14 +5,11 @@ import Player from './Player'
 import Sidebar from './Sidebar'
 import '../styles/App.css'
 
-function mapStateToProps(state) {
-  return state
-}
-
 class App extends Component {
   render() {
     return (
       <div className="App">
+        <h1>ButtsTube</h1>
         <SearchBox />
         <Player />
         <Sidebar />
@@ -21,4 +18,4 @@ class App extends Component {
   }
 }
 
-export default connect(mapStateToProps)(App)
+export default connect()(App)
