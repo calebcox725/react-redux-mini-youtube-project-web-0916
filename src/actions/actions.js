@@ -23,9 +23,6 @@ export function fetchVideos(searchTerm) {
 export function swapVideos(mainVideo, swapVideo) {
   return {
     type: "SWAP_VIDEOS",
-    payload: {
-      mainVideo,
-      swapVideo
-    }
+    payload: { mainVideo, swapVideo }
   }
 }

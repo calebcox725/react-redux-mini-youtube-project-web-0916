@@ -13,7 +13,10 @@ function mapDispatchToProps(dispatch) {
 
 function Sidebar(props) {
   function handleClick(event) {
-    props.swapVideos(props.mainVideo, props.sidebarVideos[event.target.id])
+    const mainVideo = props.mainVideo
+    const swapVideo = props.sidebarVideos[event.target.id]
+    
+    props.swapVideos(mainVideo, swapVideo)
   }
 
   const otherVideos = props.sidebarVideos.map((video, i) => {

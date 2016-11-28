@@ -11,6 +11,7 @@ function SearchBox(props) {
   function handleSubmit(event) {
     event.preventDefault()
     const query = event.target.children[0].value
+    
     props.fetchVideos(query)
   }
 
