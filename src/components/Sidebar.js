@@ -21,7 +21,7 @@ function Sidebar(props) {
 
   const otherVideos = props.sidebarVideos.map((video, i) => {
     return (
-      <li id={i} onClick={handleClick.bind(this)}>
+      <li id={i} onClick={handleClick.bind(this)} className="list-group-item">
         <img id={i} src={video.thumbnail} /><br/>
         {video.title}
       </li>

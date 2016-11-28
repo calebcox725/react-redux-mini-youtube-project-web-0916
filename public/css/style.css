@@ -1,7 +1,9 @@
 .video-container {
     position: relative;
     padding-bottom: 56.25%;
-    padding-top: 30px; height: 0; overflow: hidden;
+    padding-top: 30px;
+    height: 0;
+    overflow: hidden;
 }
 
 .video-container iframe {
@@ -10,4 +12,25 @@
     left: 0;
     width: 100%;
     height: 100%;
+}
+
+.SearchBox {
+  padding-top: 2rem;
+  float: right;
+}
+
+.list-group-item {
+  padding: 0.5rem;
+  margin: 0;
+  border: 1px solid #eee;
+  cursor: pointer;
+  list-style-type: none;
+}
+
+.list-group-item:hover {
+  background-color: #eee;
+}
+
+h1 {
+  padding-top: 1rem;
 }
