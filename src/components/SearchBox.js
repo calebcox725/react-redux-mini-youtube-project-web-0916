@@ -22,8 +22,8 @@ class SearchBox extends Component {
     return (
       <div className="SearchBox">
         <form onSubmit={this.handleSubmit}>
-          <input type="text"/>
-          <input type="submit"/>
+          <input type="text" />
+          <input type="submit" value="Search"/>
         </form>
       </div>
     )

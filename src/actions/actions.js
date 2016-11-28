@@ -2,7 +2,7 @@ import axios from 'axios'
 const API_KEY = 'AIzaSyDJBjY4UqxuyyIDEFcAsBCwfyJcoz5Eixw'
 const ROOT_URL = 'https://www.googleapis.com/youtube/v3/search'
 
-export function fetchVideos(searchTerm){
+export function fetchVideos(searchTerm) {
   const videos = axios.get(
     ROOT_URL,
     { params: {
@@ -17,5 +17,12 @@ export function fetchVideos(searchTerm){
   return {
     type: "FETCH_VIDEOS",
     payload: videos
+  }
+}
+
+export function swapVideos(clickedVideo) {
+  return {
+    type: "SWAP_VIDEOS",
+    payload: clickedVideo
   }
 }

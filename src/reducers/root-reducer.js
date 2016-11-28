@@ -7,12 +7,16 @@ function videos(state = [], action){
       return videos.map(video => {
         return {
           src: `https://www.youtube.com/embed/${video.id.videoId}`,
-          channel: video.snippet.channelTitle,
           title: video.snippet.title,
-          description: video.snippet.description,
-          thumbnail: video.snippet.thumbnails.high.url
+          thumbnail: video.snippet.thumbnails.default.url
         }
       })
+    case "SWAP_VIDEOS":
+      const clickedVideo = action.payload
+      let newList = [...state]
+      newList.splice(clickedVideo, 1)
+      newList.unshift(state[clickedVideo])
+      return newList
     default:
       return state
   }
