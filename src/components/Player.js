@@ -1,18 +1,16 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { connect } from 'react-redux'
 
 function mapStateToProps(state) {
-  return state
+  return { mainVideo: state.mainVideo }
 }
 
-class Player extends Component {
-  render() {
-    return (
-      <div className="Player">
-        <iframe width="800" height="600" src={this.props.videos[0].src} />
-      </div>
-    )
-  }
+function Player(props) {
+  return (
+    <div className="Player">
+      <iframe width="800" height="600" src={ props.mainVideo.src } />
+    </div>
+  )
 }
 
 export default connect(mapStateToProps)(Player)

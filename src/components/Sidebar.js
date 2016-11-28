@@ -1,44 +1,37 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import { bindActionCreators } from 'redux'
 import { swapVideos } from '../actions/actions'
 
 function mapStateToProps(state) {
   return state
 }
 
-class Sidebar extends Component {
-  constructor() {
-    super()
-    this.handleClick = this.handleClick.bind(this)
-  }
-
-  handleClick(event) {
-    const clickedVideo = event.target.id
-    this.props.dispatch(swapVideos(clickedVideo))
-  }
-
-  render() {
-    const otherVideos = this.props.videos.map((video, idx) => {
-      if (idx === 0) {
-         return
-       } else {
-         return (
-           <li onClick={this.handleClick} id={idx} className="list-group-item">
-             <img src={video.thumbnail} alt={video.title} id={idx}/>
-             {video.title}
-           </li>
-         )
-       }
-    })
-
-    return (
-      <div className="Sidebar">
-        <ul>
-          {otherVideos}
-        </ul>
-      </div>
-    )
-  }
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators({ swapVideos }, dispatch)
 }
 
-export default connect(mapStateToProps)(Sidebar)
+function Sidebar(props) {
+  function handleClick(event) {
+    props.swapVideos(props.mainVideo, props.sidebarVideos[event.target.id])
+  }
+
+  const otherVideos = props.sidebarVideos.map((video, i) => {
+    return (
+      <li id={i} onClick={handleClick.bind(this)} className="list-group-item">
+        <img id={i} src={video.thumbnail} />
+        {video.title}
+      </li>
+    )
+  })
+
+  return (
+    <div className="Sidebar">
+      <ul>
+        {otherVideos}
+      </ul>
+    </div>
+  )
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Sidebar)

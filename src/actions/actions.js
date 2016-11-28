@@ -20,9 +20,12 @@ export function fetchVideos(searchTerm) {
   }
 }
 
-export function swapVideos(clickedVideo) {
+export function swapVideos(mainVideo, swapVideo) {
   return {
     type: "SWAP_VIDEOS",
-    payload: clickedVideo
+    payload: {
+      mainVideo,
+      swapVideo
+    }
   }
 }
