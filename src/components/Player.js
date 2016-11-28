@@ -9,7 +9,7 @@ class Player extends Component {
   render() {
     return (
       <div className="Player">
-        <iframe width="640" height="360" src={this.props.videos[0].src} />
+        <iframe width="800" height="600" src={this.props.videos[0].src} />
       </div>
     )
   }

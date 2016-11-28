@@ -9,7 +9,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <h1>ButtsTube</h1>
+        <h1>BobbyHillTube</h1>
         <SearchBox />
         <Player />
         <Sidebar />

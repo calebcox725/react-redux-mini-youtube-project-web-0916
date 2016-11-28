@@ -15,4 +15,4 @@ function render() {
   )
 }
 
-store.dispatch(fetchVideos()).then(render)
+store.dispatch(fetchVideos('bobby hill')).then(render)

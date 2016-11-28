@@ -4,6 +4,7 @@ function videos(state = [], action){
   switch (action.type) {
     case "FETCH_VIDEOS":
       const videos = action.payload.data.items
+      
       return videos.map(video => {
         return {
           src: `https://www.youtube.com/embed/${video.id.videoId}`,
@@ -13,9 +14,12 @@ function videos(state = [], action){
       })
     case "SWAP_VIDEOS":
       const clickedVideo = action.payload
-      let newList = [...state]
-      newList.splice(clickedVideo, 1)
-      newList.unshift(state[clickedVideo])
+      const newList = [...state]
+
+      const temp = newList[0]
+      newList[0] = newList[clickedVideo]
+      newList[clickedVideo] = temp
+
       return newList
     default:
       return state

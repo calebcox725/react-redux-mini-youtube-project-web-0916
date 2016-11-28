@@ -4,18 +4,7 @@
 }
 
 .search-bar input {
-  width: 75%;
-}
-
-.video-item img {
-  max-width: 64px;
-}
-
-.video-detail .details {
-  margin-top: 10px;
-  padding: 10px;
-  border: 1px solid #ddd;
-  border-radius: 4px;
+  width: 100%;
 }
 
 .list-group-item {
@@ -24,4 +13,14 @@
 
 .list-group-item:hover {
   background-color: #eee;
+}
+
+.App {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.Sidebar ul {
+  width: 100%;
+  padding-left: 0;
 }
