@@ -7,7 +7,7 @@ import Sidebar from './Sidebar'
 function App() {
   return (
     <div className="App container">
-      <div className="row">
+      <div className="row bobby-header">
         <div className="seven columns">
           <h1>BobbyHillTube</h1>
         </div>
